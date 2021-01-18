@@ -1,7 +1,7 @@
 # Личный проект «Техномарт»
 
 * Студент: [Алексей Менякин](https://up.htmlacademy.ru/htmlcss/30/user/960263).
-* Наставник: [Наталья Шурыгина](https://github.com/PolinaShneider).
+* Наставник: [Наталья Шурыгина](https://htmlacademy.ru/profile/id1178327).
 
 ---
 
