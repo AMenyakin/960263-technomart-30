@@ -64,6 +64,8 @@
   --pickled-bluewood-a: #32425C;
   --pickled-bluewood-b: #293449;
   --ebony-clay: #212A3A;
+  --mirage-a: #1D2739;
+  --mirage-b: #161D29;
 
   --apple-a: #63A63E;
   --apple-b: #5FBB2D;
@@ -84,4 +86,370 @@
   --light-orchid: #DC91D8;
 
   --transparent-black: rgba(0, 0, 0, 0.0001);
+  --translucent-white-a: rgba(255, 255, 255, 0.3);
+  --translucent-white-b: rgba(255, 255, 255, 0.5);
+}
+
+body {
+  min-width: 960px;
+  margin: 0;
+  padding: 0;
+  font-family: "Cuprum", Arial, sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--basic-black);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Всем изображениям укажем max-width: 100%, чтобы они не вылезали за пределы своих родительских элементов, и укажем автоматическую высоту, чтобы изменение размеров было пропорциональным. */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.button {
+  font: inherit;
+  height: 38px;
+  font-size: 14px;
+  line-height: 38px;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+}
+
+.red-button {
+  color: var(--basic-white);
+  background-color: var(--amaranth);
+}
+
+.red-button:hover {
+  background-color: var(--brick-red);
+}
+
+.red-button {
+  background-color: var(--tall-poppy);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.section-title {
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.section-header {
+  background-color: var(--merino);
+}
+
+.main-header {
+  color: var(--basic-white);
+}
+
+.header-top-container {
+  background-color: var(--pickled-bluewood-b);
+}
+
+.main-header-logo {
+  background-color: var(--amaranth);
+}
+
+.main-header-logo:focus {
+  background-color: var(--tall-poppy);
+}
+
+.site-search {
+  font: inherit;
+  background-color: transparent;
+}
+
+.site-search:focus {
+  background-color: var(--basic-white);
+}
+
+.order-link {
+  background-color: var(--apple-a);
+}
+
+.order-link:hover {
+  background-color: var(--apple-b);
+}
+
+.order-link:focus {
+  color: var(--translucent-white);
+  background-color: var(--apple-a);
+}
+
+.header-bottom-container {
+  background-color: var(--aqua-haze-a);
+}
+
+.header-description {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 23px;
+  color: var(--amaranth);
+}
+
+.header-phone-link {
+  font-size: 21px;
+  line-height: 30px;
+  font-weight: 700;
+  color: var(--amaranth);
+  background-color: var(--catskill-white);
+}
+
+.header-address {
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--pickled-bluewood-a);
+}
+
+.header-actions a {
+  background-color: var(--transparent-black);
+  font-size: 21px;
+  line-height: 21px;
+  color: var(--basic-black);
+}
+
+.header-actions a:hover {
+  color: var(--amaranth);
+}
+
+.header-actions a:focus {
+  color: var(--silver);
+}
+
+.main-navigation {
+  background-color: var(--pickled-bluewood-a);
+}
+
+.categories-list {
+  color: var(--basic-white);
+}
+
+.category-item {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.category-title {
+  margin: 0;
+}
+
+.category-button {
+  color: var(--basic-white);
+  background-color: var(--translucent-white-a);
+}
+
+.category-button:hover {
+  background-color: var(--silver);
+}
+
+.category-button:focus, .category-button:active {
+  background-color: var(--silver-chalice);
+}
+
+.category-item.materials {
+  background-color: var(--yellow-orange-a);
+}
+
+.category-item.tools {
+  background-color: var(--picton-blue);
+}
+
+.category-item.technics {
+  background-color: var(--light-orchid);
+}
+
+.category-item.sales {
+  background-color: var(--feijoa);
+}
+
+.category-item.delivery {
+  background-color: var(--yellow-orange-b);
+}
+
+.slider {
+  color: var(--basic-white);
+  background-color: var(--silver-chalice);
+}
+
+.slide-title {
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.section-header .section-title {
+  color: var(--pickled-bluewood-a);
+}
+
+.product-list {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 18px;
+}
+
+.product-title {
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.product-old-price {
+  color: var(--silver-chalice);
+  text-transform: uppercase;
+}
+
+.product-price {
+  color: var(--basic-white);
+  background-color: var(--amaranth);
+  text-transform: uppercase;
+}
+
+.services {
+  background-color: var(--aqua-haze-a);
+}
+
+.services-list {
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 30px;
+}
+
+.service-item {
+  color: var(--basic-white);
+  background-color: var(--pickled-bluewood-a);
+}
+
+.service-item-active {
+  color: var(--pickled-bluewood-a);
+  background-color: var(--basic-white);
+}
+
+.service-item:not(.service-item-active):hover {
+  background-color: var(--pickled-bluewood-b);
+}
+
+.main-text {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.service-info .section-title {
+  color: var(--pickled-bluewood-a);
+}
+
+.footer-top-container {
+  background-color: var(--pickled-bluewood-a);
+}
+
+.footer-logo {
+  background-color: var(--amaranth);
+}
+
+.footer-contacts {
+  color: var(--catskill-white);
+}
+
+.footer-phone-link {
+  color: inherit;
+}
+
+.footer-main-menu a {
+  color: var(--aqua-haze-a);
+}
+
+.footer-main-menu a:hover, .footer-catalog-menu a:hover, .footer-link {
+  text-decoration: underline;
+}
+
+.footer-main-menu a:focus, .footer-catalog-menu a:focus {
+  color: var(--translucent-white-b);
+}
+
+.footer-catalog-menu a, .footer-link {
+  color: var(--salomie);
+}
+
+.footer-bottom-container {
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--basic-white);
+  background-color: var(--pickled-bluewood-b);
+}
+
+.social-button {
+  color: inherit;
+  background-color: var(--ebony-clay);
+}
+
+.social-button:hover, .social-button:focus {
+  background-color: var(--amaranth);
+}
+
+.site-navigation a, .header-top-container a {
+  color: var(--basic-white);
+}
+
+.site-navigation a:hover {
+  background-color: var(--pickled-bluewood-b);
+}
+
+.site-navigation a:focus {
+  opacity: 0.5;
+  background-color: var(--mirage-a);
+}
+
+.cart-link:focus {
+  color: var(--translucent-white);
+}
+
+.bookmarks-link:focus {
+  color: var(--translucent-white);
+  background-color: var(--mirage-b);
+}
+
+.footer-link:focus {
+  color: var(--amaranth);
+}
+
+.bread-crumps {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
 }
