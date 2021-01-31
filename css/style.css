@@ -88,11 +88,12 @@
   --transparent-black: rgba(0, 0, 0, 0.0001);
   --translucent-white-a: rgba(255, 255, 255, 0.3);
   --translucent-white-b: rgba(255, 255, 255, 0.5);
+  --translucent-grey-a: rgb(197, 197, 197, 0.3);
+  --translucent-grey-b: rgb(169, 169, 169, 0.3);
 }
 
 body {
   min-width: 960px;
-  margin: 0;
   padding: 0;
   font-family: "Cuprum", Arial, sans-serif;
   font-style: normal;
@@ -129,6 +130,7 @@ img {
 }
 
 .button {
+  display: inline-block;
   font: inherit;
   height: 38px;
   font-size: 14px;
@@ -147,7 +149,7 @@ img {
   background-color: var(--brick-red);
 }
 
-.red-button {
+.red-button:focus {
   background-color: var(--tall-poppy);
 }
 
@@ -202,7 +204,7 @@ img {
 }
 
 .order-link:focus {
-  color: var(--translucent-white);
+  color: var(--translucent-white-a);
   background-color: var(--apple-a);
 }
 
@@ -270,11 +272,11 @@ img {
 }
 
 .category-button:hover {
-  background-color: var(--silver);
+  background-color: var(--translucent-grey-a);
 }
 
 .category-button:focus, .category-button:active {
-  background-color: var(--silver-chalice);
+  background-color: var(--translucent-grey-b);
 }
 
 .category-item.materials {
@@ -434,11 +436,11 @@ img {
 }
 
 .cart-link:focus {
-  color: var(--translucent-white);
+  color: var(--translucent-white-a);
 }
 
 .bookmarks-link:focus {
-  color: var(--translucent-white);
+  color: var(--translucent-white-a);
   background-color: var(--mirage-b);
 }
 
@@ -446,10 +448,18 @@ img {
   color: var(--amaranth);
 }
 
-.bread-crumps {
+.breadcrumbs {
   font-family: "PT Sans", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
   line-height: 18px;
+}
+
+.breadcrumbs a {
+  color: inherit;
+}
+
+.page-title-container {
+  background-color: var(--aqua-haze-b);
 }
