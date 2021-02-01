@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: "Cumprum";
+  font-family: "Cuprum";
   src: url("../fonts/cuprumitalic.woff2") format("woff2"),
        url("../fonts/cuprumitalic.woff") format("woff");
   font-weight: 400;
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-  font-family: "Cumprum";
+  font-family: "Cuprum";
   src: url("../fonts/cuprumbold.woff2") format("woff2"),
        url("../fonts/cuprumbold.woff") format("woff");
   font-weight: 700;
@@ -23,7 +23,7 @@
 }
 
 @font-face {
-  font-family: "Cumprum";
+  font-family: "Cuprum";
   src: url("../fonts/cuprumbolditalic.woff2") format("woff2"),
        url("../fonts/cuprumbolditalic.woff") format("woff");
   font-weight: 700;
@@ -71,6 +71,7 @@
   --apple-b: #5FBB2D;
   --apple-c: #518534;
   --feijoa: #8ED78F;
+  --bilbao: #367315;
 
   --silver: #C5C5C5;
   --gallery: #EAEAEA;
@@ -85,10 +86,13 @@
   --picton-blue: #3BBCE3;
   --light-orchid: #DC91D8;
 
-  --transparent-black-a: rgba(0, 0, 0, 0.0001);
-  --transparent-black-b: rgba(0, 0, 0, 0.3);
+  --translucent-black-a: rgba(0, 0, 0, 0.0001);
+  --translucent-black-b: rgba(0, 0, 0, 0.3);
+  --translucent-black-c: rgba(0, 0, 0, 0.15);
+
   --translucent-white-a: rgba(255, 255, 255, 0.3);
   --translucent-white-b: rgba(255, 255, 255, 0.5);
+
   --translucent-grey-a: rgb(197, 197, 197, 0.3);
   --translucent-grey-b: rgb(169, 169, 169, 0.3);
 }
@@ -138,6 +142,7 @@ img {
   text-transform: uppercase;
   text-align: center;
   border: none;
+  outline: none;
 }
 
 .red-button {
@@ -235,18 +240,24 @@ img {
   color: var(--pickled-bluewood-a);
 }
 
-.header-actions a {
-  background-color: var(--transparent-black-a);
+.login-link, .registration-link, .logout-link {
+  background-color: var(--translucent-black-a);
   font-size: 21px;
   line-height: 21px;
   color: var(--basic-black);
 }
 
-.header-actions a:hover {
+.cabinet-links a {
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--pickled-bluewood-a);
+}
+
+.login-link:hover, .registration-link:hover, .cabinet-links a:hover {
   color: var(--amaranth);
 }
 
-.header-actions a:focus {
+.login-link:focus, .registration-link:focus, .logout-link:focus, .cabinet-links a:focus {
   color: var(--silver);
 }
 
@@ -318,7 +329,6 @@ img {
 
 .product-list {
   font-family: "PT Sans", Arial, sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 17px;
   line-height: 18px;
@@ -450,8 +460,6 @@ img {
 
 .breadcrumbs {
   font-family: "PT Sans", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
   font-size: 13px;
   line-height: 18px;
 }
@@ -466,7 +474,6 @@ img {
 
 .filter, .sort {
   font-family: "PT Sans", Arial, sans-serif;
-  font-weight: 400;
   text-transform: uppercase;
 }
 
@@ -498,7 +505,7 @@ img {
 }
 
 .sort-by label {
-  color: var(--transparent-black-b);
+  color: var(--translucent-black-b);
   text-decoration: underline;
   text-decoration-style: dotted;
   text-decoration-color: var(--amaranth);
@@ -519,12 +526,46 @@ img {
 
 .pagination-button {
   font-family: "PT Sans", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
   font-size: 13px;
   line-height: 18px;
 }
 
 .about-product {
   background-color: var(--aqua-haze-a);
+}
+
+.product-item .button {
+  width: 135px;
+  font-size: 14px;
+  line-height: 18px;
+  border-radius: 2px;
+}
+
+.buy-button {
+  color: var(--basic-white);
+  background-color: var(--apple-a);
+  box-shadow: inset 0px -3px 0px var(--bilbao);
+}
+
+.buy-button:hover {
+  background-color: var(--apple-b);
+}
+
+.buy-button:focus {
+  background-color: var(--apple-c);
+}
+
+.add-bookmark-button {
+  color: var(--pickled-bluewood-a);
+  background-color: transparent;
+  border: 3px solid var(--apple-a);
+}
+
+.add-bookmark-button:hover {
+  border-color: var(--pickled-bluewood-a);
+}
+
+.add-bookmark-button:focus {
+  border-color: var(--pickled-bluewood-a);
+  opacity: 0.5;
 }
