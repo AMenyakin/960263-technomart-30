@@ -55,6 +55,11 @@
   --catskill-white: #F3F7F9;
   --merino: #F9F5F0;
   --ecru-white: #F7F3EC;
+  --silver: #C5C5C5;
+  --gallery: #EAEAEA;
+  --silver-chalice: #A9A9A9;
+  --mercury: #E5E5E5;
+  --nobel: #B5B5B5;
 
   --amaranth: #EE3643;
   --brick-red: #CA2C37;
@@ -73,11 +78,7 @@
   --feijoa: #8ED78F;
   --bilbao: #367315;
 
-  --silver: #C5C5C5;
-  --gallery: #EAEAEA;
-  --silver-chalice: #A9A9A9;
-  --mercury: #E5E5E5;
-  --nobel: #B5B5B5;
+
 
   --yellow-orange-a: #FFBF47;
   --yellow-orange-b: #FFC047;
@@ -95,6 +96,10 @@
 
   --translucent-grey-a: rgb(197, 197, 197, 0.3);
   --translucent-grey-b: rgb(169, 169, 169, 0.3);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
@@ -143,6 +148,7 @@ img {
   text-align: center;
   border: none;
   outline: none;
+  color: inherit;
 }
 
 .red-button {
@@ -404,7 +410,11 @@ img {
   color: var(--aqua-haze-a);
 }
 
-.footer-main-menu a:hover, .footer-catalog-menu a:hover, .footer-link {
+.footer-catalog-menu a, .footer-link {
+  color: var(--salomie);
+}
+
+.footer-main-menu a:hover, .footer-catalog-menu a:hover, .footer-link:hover {
   text-decoration: underline;
 }
 
@@ -412,8 +422,12 @@ img {
   color: var(--translucent-white-b);
 }
 
-.footer-catalog-menu a, .footer-link {
-  color: var(--salomie);
+.footer-link:focus {
+  color: var(--amaranth);
+}
+
+.footer-main-menu a:focus, .footer-catalog-menu a:focus, .footer-link:focus {
+  text-decoration: none;
 }
 
 .footer-bottom-container {
@@ -424,7 +438,13 @@ img {
 }
 
 .social-button {
-  color: inherit;
+  display: inline-block;
+  text-align: center;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  border-radius: 50%;
+  color: var(--basic-white);
   background-color: var(--ebony-clay);
 }
 
@@ -452,10 +472,6 @@ img {
 .bookmarks-link:focus {
   color: var(--translucent-white-a);
   background-color: var(--mirage-b);
-}
-
-.footer-link:focus {
-  color: var(--amaranth);
 }
 
 .breadcrumbs {
@@ -511,7 +527,7 @@ img {
   text-decoration-color: var(--amaranth);
 }
 
-.sort-by input[checked] + label {
+.sort-by input:checked + label {
   color: var(--amaranth);
   text-decoration: none;
 }
@@ -520,14 +536,28 @@ img {
   color: var(--silver);
 }
 
-.sort-direction input[checked] label {
+.sort-direction input:checked label {
   color: var(--amaranth);
 }
 
 .pagination-button {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
-  line-height: 18px;
+  width: 38px;
+  border: 1px solid var(--mercury);
+  border-radius: 2px;
+}
+
+.pagination-button:hover {
+  border-color: var(--silver);
+}
+
+.pagination-button:focus {
+  border-color: var(--amaranth);
+}
+
+.pagination-next-button {
+  width: 140px;
 }
 
 .about-product {
