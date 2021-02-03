@@ -78,8 +78,6 @@
   --feijoa: #8ED78F;
   --bilbao: #367315;
 
-
-
   --yellow-orange-a: #FFBF47;
   --yellow-orange-b: #FFC047;
   --salomie: #FFDA96;
@@ -126,6 +124,11 @@ img {
   overflow: hidden;
 }
 
+/* Это нужно, чтобы при нехватке контента подвал прижимался к нижней части страницы. */
+.page {
+  height: 100%;
+}
+
 .page-body {
   min-width: 960px;
   margin: 0;
@@ -139,11 +142,6 @@ img {
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   align-content: start;
-}
-
-/* Это нужно, чтобы при нехватке контента подвал прижимался к нижней части страницы. */
-.page {
-  height: 100%;
 }
 
 .page-body ul {
