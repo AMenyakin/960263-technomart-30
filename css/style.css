@@ -550,6 +550,10 @@ img {
   background-color: var(--aqua-haze-b);
 }
 
+.filter {
+  grid-row: 1/-1;
+}
+
 .filter, .sort {
   font-family: "PT Sans", Arial, sans-serif;
   text-transform: uppercase;
@@ -703,4 +707,10 @@ img {
 .developer {
   display: inline-block;
   margin-left: 51px;
+}
+
+.catalog-columns {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content 1fr min-content;
 }
