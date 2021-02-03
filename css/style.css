@@ -194,7 +194,7 @@ img {
   color: var(--basic-white);
 }
 
-.main-haeder-top-bar {
+.main-header-top-bar {
   background-color: var(--pickled-bluewood-b);
 }
 
@@ -378,8 +378,9 @@ img {
 
 .product-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+  row-gap: 18px;
   font-family: "PT Sans", Arial, sans-serif;
   font-weight: 700;
   font-size: 17px;
@@ -409,7 +410,7 @@ img {
 
 .popular-manufacturers-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
@@ -493,7 +494,7 @@ img {
 
 .footer-bottom-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   font-size: 16px;
   line-height: 18px;
   color: var(--basic-white);
@@ -668,7 +669,7 @@ img {
 
 .index-columns {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .contacts {
@@ -688,8 +689,7 @@ img {
 }
 
 .footer-social {
-  justify-self: center;
-  align-self: center;
+  place-self: center;
 }
 
 .social-buttons li {
