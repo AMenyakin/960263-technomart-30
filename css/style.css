@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Cuprum";
+  font-family: Cuprum;
   src: url("../fonts/cuprum.woff2") format("woff2"),
        url("../fonts/cuprum.woff") format("woff");
   font-weight: 400;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: "Cuprum";
+  font-family: Cuprum;
   src: url("../fonts/cuprumitalic.woff2") format("woff2"),
        url("../fonts/cuprumitalic.woff") format("woff");
   font-weight: 400;
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-  font-family: "Cuprum";
+  font-family: Cuprum;
   src: url("../fonts/cuprumbold.woff2") format("woff2"),
        url("../fonts/cuprumbold.woff") format("woff");
   font-weight: 700;
@@ -23,7 +23,7 @@
 }
 
 @font-face {
-  font-family: "Cuprum";
+  font-family: Cuprum;
   src: url("../fonts/cuprumbolditalic.woff2") format("woff2"),
        url("../fonts/cuprumbolditalic.woff") format("woff");
   font-weight: 700;
@@ -65,7 +65,8 @@
   --brick-red: #CA2C37;
   --tall-poppy: #BA2732;
 
-  --fiord: #3D546F;
+  --fiord-a: #3D546F;
+  --fiord-b: #405069;
   --pickled-bluewood-a: #32425C;
   --pickled-bluewood-b: #293449;
   --ebony-clay: #212A3A;
@@ -88,6 +89,7 @@
   --translucent-black-a: rgba(0, 0, 0, 0.0001);
   --translucent-black-b: rgba(0, 0, 0, 0.3);
   --translucent-black-c: rgba(0, 0, 0, 0.15);
+  --translucent-black-d: rgba(0, 0, 0, 0.24);
 
   --translucent-white-a: rgba(255, 255, 255, 0.3);
   --translucent-white-b: rgba(255, 255, 255, 0.5);
@@ -133,7 +135,7 @@ img {
   min-width: 960px;
   margin: 0;
   padding: 0;
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: Cuprum, Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
@@ -144,7 +146,7 @@ img {
   align-content: start;
 }
 
-.page-body ul {
+.list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -163,8 +165,8 @@ img {
 }
 
 .red-button {
+  width: 192px;
   font-size: 14px;
-  line-height: 38px;
   color: var(--basic-white);
   background-color: var(--amaranth);
 }
@@ -185,10 +187,20 @@ img {
 }
 
 .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 89px;
+  margin-bottom: 20px;
   background-color: var(--merino);
 }
 
+.section-header .red-button {
+  margin-right: 19px;
+}
+
 .main-header {
+  margin-bottom: 59px;
   color: var(--basic-white);
 }
 
@@ -197,12 +209,30 @@ img {
 }
 
 .header-top-container {
-  display: grid;
-  grid-template-columns: max-content 1fr max-content;
+  position: relative;
 }
 
-.main-header-logo {
+.header-top-container-inner {
+  display: flex;
+  margin-left: 220px;
+}
+
+.header-top-container-inner form {
+  flex-grow: 1;
+}
+
+.logo {
+  display: block;
+  width: 220px;
+  text-align: center;
   background-color: var(--amaranth);
+  box-shadow: inset 0 -5px var(--translucent-black-d);
+}
+
+.main-header .logo {
+  position: absolute;
+  height: 47px;
+  line-height: 47px;
 }
 
 .main-header-logo:focus {
@@ -213,6 +243,7 @@ img {
   font: inherit;
   background-color: transparent;
   width: 100%;
+  height: 100%;
 }
 
 .site-search:focus {
@@ -220,6 +251,7 @@ img {
 }
 
 .order-link {
+  padding: 9px 16px 9px 19px;
   background-color: var(--apple-a);
 }
 
@@ -241,44 +273,63 @@ img {
 }
 
 .introductory-info {
-  display: grid;
-  grid-template-columns: max-content 1fr max-content;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 46px;
+  height: 158px;
 }
 
 .header-contacts {
-  justify-self: center;
+  text-align: center;
 }
 
 .header-description {
   font-style: italic;
   font-size: 16px;
   line-height: 23px;
+  margin: 0 0 0 30px;
   color: var(--amaranth);
 }
 
 .header-phone-link {
+  display: block;
+  height: 45px;
+  padding: 5px 43px 0px 71px;
   font-size: 21px;
   line-height: 30px;
   font-weight: 700;
   color: var(--amaranth);
   background-color: var(--catskill-white);
+  border: 3px solid var(--basic-white);
 }
 
 .header-address {
   font-size: 14px;
   line-height: 24px;
+  margin-top: 3px;
   color: var(--pickled-bluewood-a);
 }
 
-.header-links-wrap li {
-  display: inline-block;
+.user-navigation {
+  display: flex;
+}
+
+.login-link {
+  padding: 0 27px 0 45px;
+}
+
+.registration-link {
+  padding: 0 24px;
+  margin-left: 10px
 }
 
 .login-link, .registration-link, .logout-link {
-  background-color: var(--translucent-black-a);
+  display: block;
+  height: 45px;
+  line-height: 45px;
   font-size: 21px;
-  line-height: 21px;
   color: var(--basic-black);
+  background-color: var(--basic-white);
 }
 
 .cabinet-links a {
@@ -305,11 +356,15 @@ img {
 }
 
 .product-categories {
-  margin-top: 59px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  margin-bottom: 59px;
 }
 
-.categories-list {
-  color: var(--basic-white);
+.category {
+  height: 123px;
 }
 
 .category-title {
@@ -317,6 +372,7 @@ img {
   font-size: 24px;
   line-height: 30px;
   font-weight: 700;
+  color: var(--basic-white);
 }
 
 .category-button {
@@ -333,27 +389,29 @@ img {
   background-color: var(--translucent-grey-b);
 }
 
-.category-item.materials {
+.category.materials {
   background-color: var(--yellow-orange-a);
 }
 
-.category-item.tools {
+.category.tools {
   background-color: var(--picton-blue);
 }
 
-.category-item.technics {
+.category.technics {
   background-color: var(--light-orchid);
 }
 
-.category-item.sales {
+.category.sales {
   background-color: var(--feijoa);
 }
 
-.category-item.delivery {
+.category.delivery {
   background-color: var(--yellow-orange-b);
 }
 
 .slider {
+  grid-column: 1/3;
+  grid-row: 2/4;
   color: var(--basic-white);
   background-color: var(--silver-chalice);
 }
@@ -367,11 +425,17 @@ img {
 }
 
 .section-header .section-title {
+  font-weight: 400;
+  margin-left: 28px;
   color: var(--pickled-bluewood-a);
 }
 
 .popular-products {
-  margin-top: 59px;
+  margin-bottom: 70px;
+}
+
+.products {
+  margin-bottom: 48px;
 }
 
 .product-list {
@@ -402,8 +466,7 @@ img {
 }
 
 .popular-manufacturers {
-  margin-top: 70px;
-  padding-bottom: 70px;
+  margin-bottom: 70px;
 }
 
 .popular-manufacturers-list {
@@ -413,18 +476,64 @@ img {
 }
 
 .services {
+  padding: 54px 0;
   background-color: var(--aqua-haze-a);
+}
+
+.services h2 {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.services h3 {
+  margin-bottom: 30px;
+}
+
+.services-inner-container {
+  display: flex;
+  margin-top: 21px;
 }
 
 .services-list {
   font-weight: 700;
   font-size: 21px;
   line-height: 30px;
+  width: 240px;
+  min-height: 279px;
+  padding: 49px 0;
+  background-image: url("../img/services-vertical-line.png");
+  background-repeat: no-repeat;
+  background-position: 100% center;
+  background-size: 10px 100%;
 }
 
 .service-item {
+  position: relative;
+  height: 61px;
+  line-height: 61px;
+  padding: 0 22px;
   color: var(--basic-white);
   background-color: var(--pickled-bluewood-a);
+}
+
+.service-item:not(:last-child):not(.service-item-active) {
+  margin-bottom: 1px;
+}
+
+.service-item:not(.service-item-active) {
+  cursor: pointer;
+  box-shadow: 0px 1px 0px var(--pickled-bluewood-b), inset 0px 1px 0px var(--fiord-b);
+}
+
+.service-item button {
+  outline: none;
+  border: none;
+  color: var(--basic-white);
+  background: transparent;
+}
+
+.service-item-active button {
+  color: var(--pickled-bluewood-a);
 }
 
 .service-item-active {
@@ -440,6 +549,16 @@ img {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
+  margin: 0;
+}
+
+.service-info {
+  padding-top: 49px;
+  padding-left: 80px;
+  flex-grow: 1;
+  background-image: url("../img/delivery-service.png");
+  background-repeat: no-repeat;
+  background-position: right 49px;
 }
 
 .service-info .section-title {
@@ -450,20 +569,56 @@ img {
   background-color: var(--pickled-bluewood-a);
 }
 
-.footer-logo {
-  background-color: var(--amaranth);
+.footer-top-container {
+  display: flex;
+  padding-bottom: 54px;
+}
+
+.main-footer .logo {
+  padding-top: 20px;
+  padding-bottom: 18px;
 }
 
 .footer-contacts {
   color: var(--catskill-white);
 }
 
+.footer-contacts p {
+  margin: 22px 0;
+}
+
 .footer-phone-link {
   color: inherit;
 }
 
+.footer-menu-container {
+  flex-grow: 1;
+}
+
+.footer-menu-container li {
+  padding: 0 29px;
+}
+
+.footer-menu-container li:last-child {
+  padding-right: 0;
+}
+
+.footer-menu-container ul {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.footer-main-menu {
+  margin-top: 37px;
+}
+
 .footer-main-menu a {
   color: var(--aqua-haze-a);
+}
+
+.footer-catalog-menu {
+  margin-top: 34px;
 }
 
 .footer-catalog-menu a, .footer-link {
@@ -491,8 +646,8 @@ img {
 }
 
 .footer-bottom-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  justify-content: space-between;
   font-size: 16px;
   line-height: 18px;
   color: var(--basic-white);
@@ -513,6 +668,20 @@ img {
   background-color: var(--amaranth);
 }
 
+.site-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: inset 0px -5px 0px var(--pickled-bluewood-b);
+}
+
+.site-navigation a {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 24px 0 27px;
+}
+
 .site-navigation a, .header-top-container a {
   color: var(--basic-white);
 }
@@ -524,6 +693,14 @@ img {
 .site-navigation a:focus {
   opacity: 0.5;
   background-color: var(--mirage-a);
+}
+
+.bookmarks-link {
+  padding: 9px 16px 9px 32px;
+}
+
+.cart-link {
+  padding: 9px 16px 9px 33px;
 }
 
 .cart-link:focus {
@@ -671,7 +848,23 @@ img {
 }
 
 .contacts {
-  justify-self: end;
+  width: 300px;
+}
+
+.contacts .button {
+  width: 100%;
+}
+
+.contacts .main-text {
+  margin-bottom: 32px;
+}
+
+.about-company {
+  width: 460px;
+}
+
+.about-company .button {
+  width: 220px;
 }
 
 .contacts-wrapper {
@@ -679,7 +872,18 @@ img {
 }
 
 .company-info {
-  padding-bottom: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 70px 0;
+}
+
+.company-info .section-title {
+  margin-bottom: 24px;
+}
+
+.transport-companies {
+  margin-top: 32px;
+  margin-bottom: 1px;
 }
 
 .copyright {
@@ -688,6 +892,10 @@ img {
 
 .footer-social {
   place-self: center;
+}
+
+.social-buttons {
+  margin-left: 35px;
 }
 
 .social-buttons li {
@@ -705,10 +913,29 @@ img {
 .developer {
   display: inline-block;
   margin-left: 51px;
+  font-style: normal;
+}
+
+.footer-contacts-container {
+  flex-shrink: 0;
 }
 
 .catalog-columns {
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-rows: min-content 1fr min-content;
+}
+
+.map {
+  width: 300px;
+  height: 158px;
+  margin-bottom: 25px;
+}
+
+.delivery-companies-list {
+  margin-bottom: 21px;
+}
+
+.delivery-company-item {
+  margin-bottom: 12px;
 }
