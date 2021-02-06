@@ -72,6 +72,7 @@
   --ebony-clay: #212A3A;
   --mirage-a: #1D2739;
   --mirage-b: #161D29;
+  --tundora: #444;
 
   --apple-a: #63A63E;
   --apple-b: #5FBB2D;
@@ -199,8 +200,11 @@ img {
   margin-right: 19px;
 }
 
-.main-header {
+.main-page {
   margin-bottom: 59px;
+}
+
+.main-header {
   color: var(--basic-white);
 }
 
@@ -332,6 +336,41 @@ img {
   background-color: var(--basic-white);
 }
 
+.user-navigation.authorized {
+  flex-direction: column;
+}
+
+.logout-link {
+  min-width: 210px;
+  text-align: center;
+  padding: 0 57px 0 56px;
+  margin-bottom: 7px;
+}
+
+.cabinet-links {
+  display: flex;
+  justify-content: center;
+}
+
+.cabinet-links li {
+  position: relative;
+}
+
+.cabinet-links li:not(:last-child) {
+  padding-right: 24px;
+}
+
+.cabinet-links li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 3px);
+  right: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--pickled-bluewood-a);
+}
+
 .cabinet-links a {
   font-size: 16px;
   line-height: 18px;
@@ -447,6 +486,10 @@ img {
   font-weight: 700;
   font-size: 17px;
   line-height: 18px;
+}
+
+.catalog-page .product-list {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .product-title {
@@ -713,13 +756,21 @@ img {
 }
 
 .breadcrumbs {
+  display: flex;
+  align-items: center;
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  height: 59px;
+}
+
+.breadcrumbs li:not(:last-child) {
+  padding-right: 40px;
 }
 
 .breadcrumbs a {
   color: inherit;
+  text-transform: uppercase;
 }
 
 .page-title-container {
@@ -727,12 +778,42 @@ img {
 }
 
 .filter {
-  grid-row: 1/-1;
+  width: 220px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.right-column {
+  flex-grow: 1;
 }
 
 .filter, .sort {
   font-family: "PT Sans", Arial, sans-serif;
   text-transform: uppercase;
+}
+
+.sort h3, .sort-by, .sort-direction {
+  display: inline-block;
+}
+
+.filter-header, .sort {
+  height: 38px;
+  padding: 0 18px;
+  margin-bottom: 16px;
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-title {
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
+  line-height: 38px;
 }
 
 .filter-header, .sort {
@@ -741,20 +822,50 @@ img {
   background-color: var(--ecru-white);
 }
 
+.filter-form fieldset, .sort fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.sort-controls-wrap {
+  display: flex;
+  align-items: center;
+}
+
 .filter-form legend {
   font-weight: 700;
   font-size: 17px;
   line-height: 30px;
+  margin-bottom: 16px;
 }
 
 .filter-form-slider {
+  height: 80px;
+  margin-bottom: 9px;
   background-color: var(--ecru-white);
+}
+
+.filter-by-price-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
 }
 
 .filter-form-input {
   font-size: 17px;
   line-height: 18px;
+  width: 95px;
+  height: 38px;
   background-color: var(--ecru-white);
+}
+
+.filter-form-input-separator {
+  position: relative;
+  top: -1px;
+  font-size: 16px;
+  color: var(--tundora);
 }
 
 .filter-form-checkbox, .filter-form-radio-button {
@@ -803,7 +914,12 @@ img {
 }
 
 .about-product {
+  padding: 64px 0 68px;
   background-color: var(--aqua-haze-a);
+}
+
+.about-product .section-title {
+  margin-bottom: 25px;
 }
 
 .product-item .button {
@@ -921,9 +1037,7 @@ img {
 }
 
 .catalog-columns {
-  display: grid;
-  grid-template-columns: min-content 1fr;
-  grid-template-rows: min-content 1fr min-content;
+  display: flex;
 }
 
 .map {
@@ -938,4 +1052,42 @@ img {
 
 .delivery-company-item {
   margin-bottom: 12px;
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--silver);
+  margin-bottom: 16px;
+}
+
+.filter-form .fieldset-manufacturers {
+  margin-bottom: 24px;
+}
+
+.fieldset-manufacturers label, .fieldset-power-supply label {
+  display: block;
+}
+
+.filter-form .fieldset-power-supply {
+  margin-bottom: 34px;
+}
+
+.filter-button {
+  width: 100%;
+  font-size: 13px;
+  background: transparent;
+  border: 1px solid var(--mercury);
+  cursor: pointer;
+}
+
+.product-list-navigation {
+  margin-bottom: 59px;
+}
+
+.pagination {
+  display: flex;
+}
+
+.pagination li:not(:first-child) {
+  margin-left: 10px;
 }
