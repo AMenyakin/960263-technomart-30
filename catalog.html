@@ -137,7 +137,7 @@
                 </div>
                 <div class="price-controls">
                   <input type="number" name="min-price" value="0">
-                  <span class="hyphen">–</span>
+                  <span class="delimiter">–</span>
                   <input type="number" name="max-price" value="30000">
                 </div>
               </fieldset>
@@ -154,7 +154,7 @@
                     <label for="filter-interskol">Интерскол</label>
                   </li>
                   <li class="filter-option filter-checkbox">
-                    <input disabled class="filter-input-checkbox visually-hidden" type="checkbox" name="makita" id="filter-makita" checked>
+                    <input class="filter-input-checkbox visually-hidden" type="checkbox" name="makita" id="filter-makita" checked>
                     <label for="filter-makita">Makita</label>
                   </li>
                   <li class="filter-option filter-checkbox">
@@ -172,7 +172,7 @@
                 <legend>питание:</legend>
                 <ul class="list">
                   <li class="filter-option filter-radio">
-                    <input disabled class="filter-input-radio visually-hidden" type="radio" name="powerSupply" value="accumulator" id="filter-accumulator" checked>
+                    <input class="filter-input-radio visually-hidden" type="radio" name="powerSupply" value="accumulator" id="filter-accumulator" checked>
                     <label for="filter-accumulator">Аккумуляторные</label>
                   </li>
                   <li class="filter-option filter-radio">
@@ -227,7 +227,9 @@
                     </div>
                     <span class="product-old-price">30500 Р.</span>
                   </div>
-                  <span class="product-price">25500 Р.</span>
+                  <div class="product-price-wrap">
+                    <p class="product-price">25500 Р.</p>
+                  </div>
                 </li>
                 <li class="product-item">
                   <div class="product-wrap">
@@ -241,7 +243,9 @@
                     </div>
                     <span class="product-old-price">30500 Р.</span>
                   </div>
-                  <span class="product-price">25500 Р.</span>
+                  <div class="product-price-wrap">
+                    <p class="product-price">25500 Р.</p>
+                  </div>
                 </li>
                 <li class="product-item badge-new">
                   <div class="product-wrap">
@@ -255,7 +259,9 @@
                     </div>
                     <span class="product-old-price">30500 Р.</span>
                   </div>
-                  <span class="product-price">25500 Р.</span>
+                  <div class="product-price-wrap">
+                    <p class="product-price">25500 Р.</p>
+                  </div>
                 </li>
                 <li class="product-item badge-new">
                   <div class="product-wrap">
@@ -269,7 +275,9 @@
                     </div>
                     <span class="product-old-price">22500 Р.</span>
                   </div>
-                  <span class="product-price">15500 Р.</span>
+                  <div class="product-price-wrap">
+                    <p class="product-price">15500 Р.</p>
+                  </div>
                 </li>
                 <li class="product-item">
                   <div class="product-wrap">
@@ -283,7 +291,9 @@
                     </div>
                     <span class="product-old-price">30500 Р.</span>
                   </div>
-                  <span class="product-price">25500 Р.</span>
+                  <div class="product-price-wrap">
+                    <p class="product-price">25500 Р.</p>
+                  </div>
                 </li>
                 <li class="product-item badge-new">
                   <div class="product-wrap">
@@ -297,7 +307,9 @@
                     </div>
                     <span class="product-old-price"></span>
                   </div>
-                  <span class="product-price">12500 Р.</span>
+                  <div class="product-price-wrap">
+                    <p class="product-price">12500 Р.</p>
+                  </div>
                 </li>
                 <li class="product-item badge-new">
                   <div class="product-wrap">
@@ -311,7 +323,9 @@
                     </div>
                     <span class="product-old-price">22500 Р.</span>
                   </div>
-                  <span class="product-price">15500 Р.</span>
+                  <div class="product-price-wrap">
+                    <p class="product-price">15500 Р.</p>
+                  </div>
                 </li>
                 <li class="product-item">
                   <div class="product-wrap">
@@ -325,7 +339,9 @@
                     </div>
                     <span class="product-old-price">30500 Р.</span>
                   </div>
-                  <span class="product-price">25500 Р.</span>
+                  <div class="product-price-wrap">
+                    <p class="product-price">25500 Р.</p>
+                  </div>
                 </li>
                 <li class="product-item badge-new">
                   <div class="product-wrap">
@@ -338,7 +354,9 @@
                       </div>
                     </div>
                   </div>
-                  <span class="product-price">12500 Р.</span>
+                  <div class="product-price-wrap">
+                    <p class="product-price">12500 Р.</p>
+                  </div>
                 </li>
               </ul>
             </section>
@@ -444,7 +462,7 @@
             <h2 class="visually-hidden">Мы в социальных сетях</h2>
             <ul class="social-links list">
               <li>
-                <a class="social-link vkontakte" href="#" aria-label="vkontake"></a>
+                <a class="social-link vk" href="#" aria-label="vk"></a>
               </li>
               <li>
                 <a class="social-link facebook" href="#" aria-label="facebook"></a>

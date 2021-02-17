@@ -298,7 +298,7 @@ img {
   display: flex;
   justify-content: space-between;
   padding-top: 46px;
-  height: 158px;
+  padding-bottom: 26px;
 }
 
 .header-info-wrap {
@@ -702,8 +702,12 @@ img {
 
 .product-old-price {
   position: relative;
+  max-width: 180px;
   color: var(--silver-chalice-a);
   text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .product-old-price::after {
@@ -715,21 +719,18 @@ img {
   border-bottom: 1px solid var(--silver-chalice-a);
 }
 
-.product-price {
+.product-price-wrap {
   position: relative;
   margin-top: 13px;
   padding-top: 9px;
   width: 122px;
   height: 38px;
-  color: var(--basic-white);
   background-color: var(--amaranth);
-  text-align: center;
-  text-transform: uppercase;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
 
-.product-price::after {
+.product-price-wrap::after {
   content: "";
   position: absolute;
   top: 0;
@@ -737,6 +738,18 @@ img {
   border: 19px solid transparent;
   border-left-color: var(--amaranth);
 }
+
+.product-price {
+  margin: 0;
+  color: var(--basic-white);
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
 
 .popular-manufacturers {
   margin-bottom: 70px;
@@ -763,7 +776,7 @@ img {
 }
 
 .services {
-  padding: 55px 0;
+  padding: 53px 0;
   background-color: var(--aqua-haze-a);
 }
 
@@ -783,12 +796,13 @@ img {
 
 .services-list {
   position: relative;
+  margin-top: 3px;
+  padding: 47px 0;
+  width: 240px;
+  min-height: 279px;
   font-weight: 700;
   font-size: 21px;
   line-height: 30px;
-  width: 240px;
-  min-height: 279px;
-  padding: 47px 0;
 }
 
 .services-list::after {
@@ -799,13 +813,20 @@ img {
   height: 100%;
   width: 10px;
   background-image: url("../img/services-vertical-line.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .service-item {
-  position: relative;
+  margin-bottom: 1px;
+  padding: 0 22px 4px;
+  width: 100%;
   height: 61px;
   line-height: 61px;
-  padding: 0 17px;
+  text-align: left;
+  font: inherit;
+  outline: none;
+  border: none;
   color: var(--basic-white);
   background-color: var(--pickled-bluewood-a);
 }
@@ -817,18 +838,6 @@ img {
 .service-item:not(.service-item-active) {
   cursor: pointer;
   box-shadow: 0px 1px 0px var(--pickled-bluewood-b), inset 0px 1px 0px var(--fiord-b);
-}
-
-.service-item button {
-  font: inherit;
-  outline: none;
-  border: none;
-  color: var(--basic-white);
-  background: transparent;
-}
-
-.service-item-active button {
-  color: var(--pickled-bluewood-a);
 }
 
 .service-item-active {
@@ -892,11 +901,7 @@ img {
 }
 
 .footer-menu-container li {
-  padding: 0 29px;
-}
-
-.footer-menu-container li:last-child {
-  padding-right: 0;
+  padding-left: 58px;
 }
 
 .footer-menu-container ul {
@@ -949,7 +954,7 @@ img {
 .footer-bottom-container {
   display: flex;
   justify-content: space-between;
-  height: 107px;
+  padding-bottom: 27px;
   font-size: 16px;
   line-height: 18px;
   color: var(--basic-white);
@@ -959,9 +964,9 @@ img {
   position: relative;
   display: inline-block;
   text-align: center;
-  width: 42px;
-  height: 42px;
-  line-height: 42px;
+  width: 41px;
+  height: 41px;
+  line-height: 41px;
   border-radius: 50%;
   background-color: var(--ebony-clay);
 }
@@ -971,7 +976,7 @@ img {
   background-color: var(--amaranth);
 }
 
-.vkontakte::after {
+.vk::after {
   content: "";
   position: absolute;
   top: 13px;
@@ -1234,11 +1239,13 @@ img {
 }
 
 .social-links {
+  display: flex;
   margin-left: 42px;
+  max-width: 222px;
 }
 
 .social-links li {
-  display: inline-block;
+  margin-left: 4px;
 }
 
 .feedback {
@@ -1299,11 +1306,16 @@ img {
 }
 
 .catalog-navigation {
-  margin-bottom: 59px;
+  margin-bottom: 49px;
 }
 
 .pagination {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.pagination li {
+  margin-bottom: 10px;
 }
 
 .pagination li:not(:first-child) {
@@ -1384,6 +1396,7 @@ img {
 .filter-button {
   width: 100%;
   height: 38px;
+  margin-bottom: 20px;
   font-family: "PT Sans", "Arial", sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -1677,7 +1690,7 @@ img {
   background-color: var(--ecru-white);
 }
 
-.hyphen {
+.delimiter {
   padding-top: 8px;
   font-size: 16px;
 }
