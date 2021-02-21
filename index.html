@@ -10,7 +10,7 @@
     <link rel="manifest" href="manifest.webmanifest">
 
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.min.css">
   </head>
 
   <body class="page-body">
@@ -414,5 +414,39 @@
         </div>
       </div>
     </footer>
+
+    <section class="modal modal-feedback">
+      <h2 class="visually-hidden">Форма обратной связи</h2>
+      <form class="feeback-form" action="https://echo.htmlacademy.ru" method="POST">
+        <div class="modal-feedback-container">
+          <div class="feedback-fields-wrap">
+            <div>
+              <label for="feedback-name">Ваше имя:</label>
+              <input class="feedback-name" id="feedback-name" type="text" placeholder="Имя Фамилия">
+            </div>
+            <div>
+              <label for="feedback-email">Ваш e-mail:</label>
+              <input class="feedback-email" id="feedback-email" type="email" placeholder="email@example.com">
+            </div>
+          </div>
+          <label class="feedback-message-label" for="feedback-message">Текст письма:</label>
+          <textarea class="feedback-message" id="feedback-message"></textarea>
+        </div>
+        <div class="feedback-form-actions">
+          <button class="send-button" type="submit">отправить</button>
+        </div>
+      </form>
+      <button class="modal-close-button" type="button" aria-label="Закрыть"></button>
+    </section>
+
+    <section class="modal modal-map">
+      <h2 class="visually-hidden">Как до нас добраться</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6036253003404!2d30.32085871650614!3d59.93871916905368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1613931373921!5m2!1sru!2sru"
+        title="Офис компании по адресу ул. Большая Конюшенная 19/8, Санкт-Петербург"
+        style="border: none" width="943" height="442" allowfullscreen
+      ></iframe>
+      <button class="modal-close-button" type="button" aria-label="Закрыть"></button>
+    </section>
   </body>
 </html>

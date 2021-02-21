@@ -62,6 +62,7 @@
   --mercury: #E5E5E5;
   --nobel: #B5B5B5;
   --iron: #D7DCDE;
+  --wild-sand: #F4F4F4;
 
   --amaranth: #EE3643;
   --brick-red: #CA2C37;
@@ -748,8 +749,6 @@ img {
   text-overflow: ellipsis;
   overflow: hidden;
 }
-
-
 
 .popular-manufacturers {
   margin-bottom: 70px;
@@ -1799,4 +1798,134 @@ img {
 
 .power-supply-filter legend {
   margin-bottom: 21px;
+}
+
+/* модальные окна */
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  border-top: 7px solid var(--amaranth);
+  box-shadow: 0 4px 20px var(--translucent-black-c);
+}
+
+.modal-feedback {
+  display: none;
+  bottom: 352px;
+  top: auto;
+  padding-top: 39px;
+  width: 620px;
+  background-color: var(--basic-white);
+}
+
+.modal-feedback-container {
+  margin: 0 auto;
+  width: 460px;
+}
+
+.feedback-fields-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 13px;
+}
+
+.feedback-form-actions {
+  padding: 37px 80px;
+  height: 112px;
+  background-color: var(--wild-sand);
+}
+
+.feeback-form label {
+  display: block;
+  margin-bottom: 11px;
+}
+
+.feedback-name,
+.feedback-email,
+.feedback-message {
+  padding-left: 12px;
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 13px;
+  line-height: 24px;
+  border: 2px solid var(--silver);
+  border-radius: 2px;
+}
+
+.feedback-name,
+.feedback-email {
+  width: 220px;
+  height: 38px;
+}
+
+.feedback-name::placeholder,
+.feedback-email::placeholder {
+  color: var(--silver-chalice-a);
+}
+
+.feedback-message-label {
+  margin-bottom: 11px;
+}
+
+.feedback-message {
+  display: block;
+  margin-bottom: 37px;
+  width: 100%;
+  height: 114px;
+  resize: none;
+}
+
+.send-button {
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 6px;
+  font: inherit;
+  border: none;
+  color: var(--basic-white);
+  background-color: var(--amaranth);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 14px;
+  right: 11px;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal-close-button::before,
+.modal-close-button::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -2px;
+  width: 24px;
+  height: 3px;
+  background-color: var(--amaranth);
+}
+
+.modal-close-button::before {
+  transform: rotate(45deg);
+}
+
+.modal-close-button::after {
+  transform: rotate(-45deg);
+}
+
+.modal-map {
+  display: none;
+  bottom: 333px;
+  top: auto;
+  width: 943px;
+  height: 449px;
+  background-color: var(--nobel);
 }
