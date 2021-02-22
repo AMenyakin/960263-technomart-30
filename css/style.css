@@ -790,6 +790,7 @@ img {
 
 .services-inner-container {
   display: flex;
+  align-items: flex-start;
   margin-top: 20px;
 }
 
@@ -866,6 +867,10 @@ img {
 
 .service-info .section-title {
   color: var(--pickled-bluewood-a);
+}
+
+.service-info .main-text {
+  max-width: 276px;
 }
 
 .footer-top-bar {
@@ -1804,19 +1809,15 @@ img {
 
 .modal {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-top: 7px solid var(--amaranth);
   box-shadow: 0 4px 20px var(--translucent-black-c);
 }
 
 .modal-feedback {
   display: none;
-  bottom: 352px;
-  top: auto;
   padding-top: 39px;
   width: 620px;
   background-color: var(--basic-white);
@@ -1923,9 +1924,11 @@ img {
 
 .modal-map {
   display: none;
-  bottom: 333px;
-  top: auto;
   width: 943px;
   height: 449px;
   background-color: var(--nobel);
+}
+
+.modal-map iframe {
+  border: none;
 }
