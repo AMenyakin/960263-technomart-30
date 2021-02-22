@@ -63,6 +63,7 @@
   --nobel: #B5B5B5;
   --iron: #D7DCDE;
   --wild-sand: #F4F4F4;
+  --seashell: #F1F1F1;
 
   --amaranth: #EE3643;
   --brick-red: #CA2C37;
@@ -1244,6 +1245,7 @@ img {
 
 .social-links {
   display: flex;
+  flex-wrap: wrap;
   margin-left: 42px;
   max-width: 222px;
 }
@@ -1931,4 +1933,59 @@ img {
 
 .modal-map iframe {
   border: none;
+}
+
+.modal-order {
+  display: none;
+  width: 620px;
+  background-color: var(--basic-white);
+}
+
+.modal-order-content {
+  padding: 67px 81px;
+}
+
+.modal-order-content p {
+  position: relative;
+  margin: 0 0 0 95px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.modal-order-content p::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: -96px;
+  width: 66px;
+  height: 66px;
+  background-image: url("../img/icons/icon-mark.svg");
+}
+
+.modal-order-actions {
+  display: flex;
+  padding: 37px 112px 37px 114px;
+  background-color: var(--seashell);
+}
+
+.modal-order-actions .primary-button {
+  min-width: 192px;
+}
+
+.continue-button {
+  margin-left: 10px;
+  font-family: "Cuprum", "Arial", sans-serif;
+  border: none;
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+  cursor: pointer;
+}
+
+.continue-button:hover {
+  background-color: var(--silver);
+}
+
+.continue-button:focus {
+  background-color: var(--silver-chalice-b);
 }
