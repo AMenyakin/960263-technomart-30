@@ -272,16 +272,16 @@
           <div class="services-inner-container">
             <ul class="services-list list">
               <li>
-                <button class="service-item service-item-active" type="button">Доставка</button>
+                <button class="service-item service-item-active" type="button" data-section-class-name="service-delivery">Доставка</button>
               </li>
               <li>
-                <button class="service-item" type="button">Гарантия</button>
+                <button class="service-item guarantee-button" type="button" data-section-class-name="service-guarantee">Гарантия</button>
               </li>
               <li>
-                <button class="service-item" type="button">Кредит</button>
+                <button class="service-item" type="button" data-section-class-name="service-credit">Кредит</button>
               </li>
             </ul>
-            <section class="service-info">
+            <section class="service-info service-delivery service-active">
               <h3 class="section-title">Доставка</h3>
               <p class="main-text">
                 Мы с удовольствием доставим ваш товар прямо
@@ -289,6 +289,22 @@
                 Ведь мы неплохо заработаем,<br>
                 поднимая его на ваш этаж!
               </p>
+            </section>
+            <section class="service-info service-guarantee">
+              <h3 class="section-title">Гарантия</h3>
+              <p class="main-text">
+                Если купленный у нас товар поломается или заискрит, а также в случае пожара,
+                спровоцированного его возгоранием, вы всегда можете быть уверены в нашей гарантии.
+                Мы обменяем сгоревший товар на новый. Дом уж восстановите как-нибудь сами.
+              </p>
+            </section>
+            <section class="service-info service-credit">
+              <h3 class="section-title">Кредит</h3>
+              <p class="main-text">
+                Залезть в долговую яму стало проще!
+                Кредитные консультанты придут вам на помощь.
+              </p>
+              <a class="primary-button get-credit-button" href="#">отправить заявку</a>
             </section>
           </div>
         </div>
@@ -463,6 +479,7 @@
     </div>
 
     <script src="js/modal.js"></script>
-    <script src="js/slider.js"></script>
+    <script src="js/product-slider.js"></script>
+    <script src="js/service-slider.js"></script>
   </body>
 </html>

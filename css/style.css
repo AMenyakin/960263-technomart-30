@@ -861,11 +861,11 @@ img {
 }
 
 .service-info {
+  display: none;
   padding-top: 49px;
   padding-left: 80px;
   min-height: 332px;
   flex-grow: 1;
-  background-image: url("../img/delivery-service.png");
   background-repeat: no-repeat;
   background-position: right 69px;
 }
@@ -876,6 +876,42 @@ img {
 
 .service-info .main-text {
   max-width: 276px;
+}
+
+.service-delivery {
+  background-image: url("../img/services/delivery.png");
+}
+
+.service-guarantee {
+  background-image: url("../img/services/guarantee.png");
+  background-position: right 47px;
+}
+
+.service-guarantee .section-title {
+  margin-bottom: 25px;
+}
+
+.service-guarantee .main-text {
+  max-width: 312px;
+}
+
+.service-credit {
+  background-image: url("../img/services/credit.png");
+  background-position: right 49px;
+}
+
+.service-credit .main-text {
+  max-width: 278px;
+}
+
+.service-active {
+  display: block;
+}
+
+.get-credit-button {
+  margin-top: 26px;
+  width: 195px;
+  border-radius: 3px;
 }
 
 .footer-top-bar {
