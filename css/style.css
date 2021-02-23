@@ -567,7 +567,9 @@ img {
   grid-row: 2/4;
   color: var(--basic-white);
   background-color: var(--silver-chalice-a);
-  background-image: url("../img/slide-background.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .slider-content {
@@ -776,7 +778,8 @@ img {
 }
 
 .services {
-  padding: 53px 0;
+  padding-top: 53px;
+  padding-bottom: 4px;
   background-color: var(--aqua-haze-a);
 }
 
@@ -860,6 +863,7 @@ img {
 .service-info {
   padding-top: 49px;
   padding-left: 80px;
+  min-height: 332px;
   flex-grow: 1;
   background-image: url("../img/delivery-service.png");
   background-repeat: no-repeat;
@@ -1204,6 +1208,22 @@ img {
   width: 300px;
 }
 
+.map-button {
+  display: block;
+  margin-bottom: 25px;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.map {
+  display: block;
+  width: 300px;
+  height: 158px;
+  background-color: var(--silver);
+}
+
 .contacts .main-text {
   margin-bottom: 32px;
 }
@@ -1276,13 +1296,6 @@ img {
 
 .catalog-columns {
   display: flex;
-}
-
-.map {
-  display: block;
-  width: 300px;
-  height: 158px;
-  margin-bottom: 25px;
 }
 
 .delivery-companies-list {
@@ -1988,4 +2001,55 @@ img {
 
 .continue-button:focus {
   background-color: var(--silver-chalice-b);
+}
+
+.modal--show {
+  display: block;
+  animation: bounce 0.6s;
+}
+
+.modal--error {
+  animation: shake 0.6s;
+}
+
+/* animations */
+
+@keyframes bounce {
+  0% {
+    transform: translate(-50%, -2000px);
+  }
+
+  60% {
+    transform: translate(-50%, -45%);
+  }
+
+  80% {
+    transform: translate(-50%, -55%);
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate(-52%, -50%);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(-48%, -50%);
+  }
 }

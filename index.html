@@ -5,7 +5,7 @@
     <title>HTML Academy: Техномарт</title>
 
     <link rel="icon" href="favicon.ico">
-    <link rel="icon" href="img/favicon/32x32.svg" type="image/svg+×ml">
+    <link rel="icon" href="img/favicon/32x32.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicon/152x152.png">
     <link rel="manifest" href="manifest.webmanifest">
 
@@ -98,8 +98,8 @@
 
         <article class="slider">
           <div class="slider-content">
-            <h3 class="slider-content-title">Перфораторы</h3>
-            <p class="slider-content-text">Настоящие мужские игрушки</p>
+            <h3 class="slider-content-title"></h3>
+            <p class="slider-content-text"></p>
           </div>
           <div class="slider-controls">
             <div class="controls-top">
@@ -113,7 +113,7 @@
                   <button class="slide-button" type="button" aria-label="к первому слайду"></button>
                 </li>
                 <li>
-                  <button class="slide-button current-slide" type="button" aria-label="ко второму слайду"></button>
+                  <button class="slide-button" type="button" aria-label="ко второму слайду"></button>
                 </li>
               </ul>
             </div>
@@ -152,7 +152,7 @@
             <div class="product-wrap">
               <h3 class="product-title">Перфоратор BOSCH BFG 9000</h3>
               <div class="product-inner">
-                <img src="img/products/bosch-bfg-9000.jpg" alt="BOSCH BFG 9000" width="184" height="164">
+                <img src="img/products/bosch-bfg-9000.jpg" alt="" width="184" height="164">
                 <div class="product-buttons-wrap">
                   <button class="buy-button" type="button">купить</button>
                   <button class="add-bookmark-button" type="button">в закладки</button>
@@ -168,7 +168,7 @@
             <div class="product-wrap">
               <h3 class="product-title">Перфоратор BOSCH BFG 3000</h3>
               <div class="product-inner">
-                <img src="img/products/bosch-bfg-3000.jpg" alt="BOSCH BFG 3000" width="127" height="112">
+                <img src="img/products/bosch-bfg-3000.jpg" alt="" width="127" height="112">
                 <div class="product-buttons-wrap">
                   <button class="buy-button" type="button">купить</button>
                   <button class="add-bookmark-button" type="button">в закладки</button>
@@ -184,7 +184,7 @@
             <div class="product-wrap">
               <h3 class="product-title">Перфоратор BOSCH BFG 6000</h3>
               <div class="product-inner">
-                <img src="img/products/bosch-bfg-6000.jpg" alt="BOSCH BFG 6000" width="144" height="128">
+                <img src="img/products/bosch-bfg-6000.jpg" alt="" width="144" height="128">
                 <div class="product-buttons-wrap">
                   <button class="buy-button" type="button">купить</button>
                   <button class="add-bookmark-button" type="button">в закладки</button>
@@ -200,7 +200,7 @@
             <div class="product-wrap">
               <h3 class="product-title">Перфоратор BOSCH BFG 2000</h3>
               <div class="product-inner">
-                <img src="img/products/bosch-bfg-2000.jpg" alt="BOSCH BFG 2000" width="127" height="112">
+                <img src="img/products/bosch-bfg-2000.jpg" alt="" width="127" height="112">
                 <div class="product-buttons-wrap">
                   <button class="buy-button" type="button">купить</button>
                   <button class="add-bookmark-button" type="button">в закладки</button>
@@ -322,8 +322,10 @@
               Вы можете забрать товар сами,<br>
               заехав в наш офис:
             </p>
-            <img class="map" src="img/map.jpg" alt="Расположение офиса на карте" width="300" height="158">
-            <a class="primary-button" href="#">заблудились? напишите нам!</a>
+            <a class="map-button" href="https://goo.gl/maps/WJAsF8rUXm7ZZkRw9" target="_blank">
+              <img class="map" src="img/map.jpg" alt="Расположение офиса на карте" width="300" height="158">
+            </a>
+            <a class="primary-button feedback-button" href="#">заблудились? напишите нам!</a>
           </div>
         </section>
       </div>
@@ -417,20 +419,20 @@
 
     <section class="modal modal-feedback">
       <h2 class="visually-hidden">Форма обратной связи</h2>
-      <form class="feeback-form" action="https://echo.htmlacademy.ru" method="POST">
+      <form class="feedback-form" action="https://echo.htmlacademy.ru" method="POST">
         <div class="modal-feedback-container">
           <div class="feedback-fields-wrap">
             <div>
               <label for="feedback-name">Ваше имя:</label>
-              <input class="feedback-name" id="feedback-name" type="text" placeholder="Имя Фамилия">
+              <input class="feedback-name" id="feedback-name" name="name" type="text" placeholder="Имя Фамилия">
             </div>
             <div>
               <label for="feedback-email">Ваш e-mail:</label>
-              <input class="feedback-email" id="feedback-email" type="email" placeholder="email@example.com">
+              <input class="feedback-email" id="feedback-email" name="email" type="text" placeholder="email@example.com">
             </div>
           </div>
           <label class="feedback-message-label" for="feedback-message">Текст письма:</label>
-          <textarea class="feedback-message" id="feedback-message"></textarea>
+          <textarea class="feedback-message" id="feedback-message" name="message"></textarea>
         </div>
         <div class="feedback-form-actions">
           <button class="send-button" type="submit">отправить</button>
@@ -448,5 +450,19 @@
       ></iframe>
       <button class="modal-close-button" type="button" aria-label="Закрыть"></button>
     </section>
+
+    <div class="modal modal-order">
+      <div class="modal-order-content">
+        <p>Товар добавлен в корзину!</p>
+      </div>
+      <div class="modal-order-actions">
+        <a class="primary-button" href="#">оформить заказ</a>
+        <button class="primary-button continue-button" type="button">продолжить покупки</button>
+      </div>
+      <button class="modal-close-button" type="button" aria-label="Закрыть"></button>
+    </div>
+
+    <script src="js/modal.js"></script>
+    <script src="js/slider.js"></script>
   </body>
 </html>
