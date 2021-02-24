@@ -1,89 +1,105 @@
-(
-  function() {
-    const sliderConfig = {
-      sliderSelector: '.slider',
-      sliderTitleSelector: '.slider-content-title',
-      sliderTextSelector: '.slider-content-text',
-      buttonsListSelector: '.slide-buttons-list',
-      prevSlideButtonSelector: '.slider-left-button',
-      nextSlideButtonSelector: '.slider-right-button',
-      slides: [
-        new ProductSlide('Перфораторы', 'Настоящие мужские игрушки', '/img/slider/slide-perforators.jpg'),
-        new ProductSlide('Дрели', 'Соседям на радость!', '/img/slider/slide-drills.jpg')
-      ]
-    };
+export class ProductSlide {
+  constructor(title, text, backgroundUrl) {
+    this.title = title;
+    this.text = text;
+    this.backgroundUrl = backgroundUrl;
+  }
+}
 
-    function ProductSlide(title, text, backgroundUrl) {
-      this.title = title;
-      this.text = text;
-      this.backgroundUrl = backgroundUrl;
+export class ProductSlider {
+  activeSlideIndex = 0;
+  slides;
+
+  constructor(config) {
+    this.slider = document.querySelector(config.sliderSelector);
+    this.sliderTitle = document.querySelector(config.sliderTitleSelector);
+    this.sliderText = document.querySelector(config.sliderTextSelector);
+    this.slideButtonList = document.querySelector(config.buttonListSelector);
+    this.prevSlideButton = document.querySelector(config.prevSlideButtonSelector);
+    this.nextSlideButton = document.querySelector(config.nextSlideButtonSelector);
+    this.slides = config.slides || [];
+  }
+
+  init() {
+    if (!this.slides.length) {
+      return;
     }
 
-    function ProductSlider(config) {
-      this.currentIndex = 0;
-      this.slider = document.querySelector(config.sliderSelector);
-      this.sliderTitle = document.querySelector(config.sliderTitleSelector);
-      this.sliderText = document.querySelector(config.sliderTextSelector);
-      this.slideButtonsList = document.querySelector(config.buttonsListSelector);
-      this.prevSlideButton = document.querySelector(config.prevSlideButtonSelector);
-      this.nextSlideButton = document.querySelector(config.nextSlideButtonSelector);
-      this.slides = config.slides || [];
+    this.renderSlideButtons();
+    this.registerListeners();
+    this.selectSlide(this.activeSlideIndex);
+  }
+
+  renderSlideButtons() {
+    const fragment = document.createDocumentFragment();
+
+    for (const index of this.slides.keys()) {
+      fragment.append(this.wrapSlideButton(this.createSlideButton(index)));
     }
 
-    ProductSlider.prototype.init = function() {
-      if (!this.slides.length) {
+    this.slideButtonList.innerHTML = '';
+    this.slideButtonList.append(fragment);
+  }
+
+  createSlideButton(buttonIndex) {
+    const buttonElement = document.createElement('button');
+    buttonElement.dataset.index = buttonIndex;
+    buttonElement.type = 'button';
+    buttonElement.classList.add('slide-button');
+    if (buttonIndex === this.activeSlideIndex) {
+      buttonElement.classList.add('current-slide');
+    }
+    buttonElement['aria-label'] = `К слайду №${buttonIndex}`;
+
+    return buttonElement;
+  }
+
+  wrapSlideButton(buttonElement) {
+    const liElement = document.createElement('li');
+    liElement.append(buttonElement);
+
+    return liElement;
+  }
+
+  registerListeners() {
+    this.prevSlideButton.addEventListener('click', () => {
+      const nextIndex = this.activeSlideIndex - 1 < 0 ? this.slides.length - 1 : this.activeSlideIndex - 1;
+      this.selectSlide(nextIndex);
+    });
+
+    this.nextSlideButton.addEventListener('click', () => {
+      const nextIndex = this.activeSlideIndex + 1 === this.slides.length ? 0 : this.activeSlideIndex + 1;
+      this.selectSlide(nextIndex);
+    });
+
+    this.slideButtonList.addEventListener('click', (evt) => {
+      if (evt.target.tagName !== 'BUTTON') {
         return;
       }
 
-      const fragment = document.createDocumentFragment();
-
-      this._slideButtons = this.slides.map((_slide, index) => {
-        const liElement = document.createElement('li');
-        const buttonElement = document.createElement('button');
-        buttonElement.type = 'button';
-        buttonElement.classList.add('slide-button');
-        buttonElement['aria-label'] = `К слайду №${index}`;
-        buttonElement.addEventListener('click', () => {
-          this._selectSlide(index);
-        });
-        liElement.append(buttonElement);
-        fragment.append(liElement);
-
-        return buttonElement;
-      });
-
-      this.slideButtonsList.innerHTML = '';
-      this.slideButtonsList.append(fragment);
-
-      this.prevSlideButton.addEventListener('click', () => {
-        const nextIndex = this.currentIndex - 1 < 0 ? this.slides.length - 1 : this.currentIndex - 1;
-        this._selectSlide(nextIndex);
-      });
-
-      this.nextSlideButton.addEventListener('click', () => {
-        const nextIndex = this.currentIndex + 1 === this.slides.length ? 0 : this.currentIndex + 1;
-        this._selectSlide(nextIndex);
-      });
-
-      this._selectSlide(this.currentIndex);
-    }
-
-    ProductSlider.prototype._selectSlide = function(index) {
-      const activeButton = this.slideButtonsList.querySelector('.current-slide');
-      if (activeButton) {
-        activeButton.classList.remove('current-slide');
+      if (evt.target.classList.contains('current-slide')) {
+        return;
       }
 
-      const slide = this.slides[index];
-      this.sliderTitle.innerText = slide.title;
-      this.sliderText.innerText = slide.text;
-      this.slider.style['background-image'] = `url(${slide.backgroundUrl})`;
-      const newActiveButton = this._slideButtons[index];
-      newActiveButton.classList.add('current-slide');
-      this.currentIndex = index;
+      const newActiveButton = evt.target;
+      const slideIndex = Number(newActiveButton.dataset.index);
+      this.selectSlide(slideIndex);
+    });
+  }
+
+  selectSlide(index) {
+    const slide = this.slides[index];
+    this.sliderTitle.innerText = slide.title;
+    this.sliderText.innerText = slide.text;
+    this.slider.style['background-image'] = `url(.${slide.backgroundUrl})`;
+    this.activeSlideIndex = index;
+
+    const activeButton = this.slideButtonList.querySelector('.current-slide');
+    if (activeButton) {
+      activeButton.classList.remove('current-slide');
     }
 
-    const productSlider = new ProductSlider(sliderConfig);
-    productSlider.init();
+    const newActiveButton = this.slideButtonList.querySelector(`[data-index="${index}"]`);
+    newActiveButton.classList.add('current-slide');
   }
-)();
+}
