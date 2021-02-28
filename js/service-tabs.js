@@ -1,7 +1,7 @@
 (function() {
   const services = document.querySelector('.services');
   const tabList = document.querySelector('.services-list');
-  const tabs = Array.from(tabList.querySelectorAll('.service-item'));
+  const tabs = Array.from(tabList.querySelectorAll('.service-tab'));
   const sections = Array.from(services.querySelectorAll('.service-info'));
 
   tabList.addEventListener('click', (evt) => {
@@ -9,17 +9,17 @@
       return;
     }
 
-    if (evt.target.classList.contains('service-item-active')) {
+    if (evt.target.classList.contains('service-tab-active')) {
       return;
     }
 
-    const activeTab = tabs.find(button => button.classList.contains('service-item-active'));
+    const activeTab = tabs.find(button => button.classList.contains('service-tab-active'));
     if (activeTab) {
-      activeTab.classList.remove('service-item-active');
+      activeTab.classList.remove('service-tab-active');
     }
 
     const newActiveTab = evt.target;
-    newActiveTab.classList.add('service-item-active');
+    newActiveTab.classList.add('service-tab-active');
 
     const activeSection = sections.find(section => section.classList.contains('service-active'));
     if (activeSection) {

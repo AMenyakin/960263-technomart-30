@@ -1,5 +1,5 @@
 window.addEventListener('keydown', (evt) => {
-  if (evt.code !== 'Escape' || evt.keyCode !== 27) {
+  if (evt.code !== 'Escape') {
     return;
   }
 
@@ -88,7 +88,7 @@ export class ModalOrder extends Modal {
     super(config.modalSelector, config.triggerElementSelector);
   }
 
-  registerFormSubmitHandler() {
+  registerTriggerElementClickHandler() {
     this.triggerElement.addEventListener('click', (evt) => {
       if (evt.target.classList.contains('buy-button')) {
         this.modal.classList.add('modal--show');

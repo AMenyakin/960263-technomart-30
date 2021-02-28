@@ -4,11 +4,11 @@ import { WriteUsModal, ModalMap, ModalOrder } from './modal.js';
 
 const productSliderConfig = {
   sliderSelector: '.slider',
-  sliderTitleSelector: '.slider-content-title',
-  sliderTextSelector: '.slider-content-text',
-  buttonListSelector: '.slide-buttons-list',
-  prevSlideButtonSelector: '.slider-left-button',
-  nextSlideButtonSelector: '.slider-right-button',
+  sliderTitleSelector: '.slider-title',
+  sliderTextSelector: '.slider-text',
+  buttonListSelector: '.slide-buttons',
+  prevSlideButtonSelector: '.prev-slide-button',
+  nextSlideButtonSelector: '.next-slide-button',
   slides: [
     new ProductSlide('Перфораторы', 'Настоящие мужские игрушки', '/img/slider/slide-perforators.jpg'),
     new ProductSlide('Дрели', 'Соседям на радость!', '/img/slider/slide-drills.jpg')
@@ -19,12 +19,12 @@ productSlider.init();
 
 
 const writeUsModalConfig = {
-  modalSelector: '.modal-feedback',
-  triggerElementSelector: '.feedback-button',
-  formSelector: '.feedback-form',
-  nameInputSelector: '.feedback-name',
-  emailInputSelector: '.feedback-email',
-  messageInputSelector: '.feedback-message'
+  modalSelector: '.write-us-modal',
+  triggerElementSelector: '.write-us-button',
+  formSelector: '.write-us-form',
+  nameInputSelector: '.write-us-name',
+  emailInputSelector: '.write-us-email',
+  messageInputSelector: '.write-us-message'
 };
 new WriteUsModal(writeUsModalConfig);
 
@@ -38,6 +38,6 @@ new ModalMap(modalMapConfig);
 
 const modalOrderConfig = {
   modalSelector: '.modal-order',
-  triggerElementSelector: '.product-list',
+  triggerElementSelector: '.products',
 };
 new ModalOrder(modalOrderConfig);
