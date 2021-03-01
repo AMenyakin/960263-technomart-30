@@ -7,9 +7,6 @@ export class ProductSlide {
 }
 
 export class ProductSlider {
-  activeSlideIndex = 0;
-  slides;
-
   constructor(config) {
     this.slider = document.querySelector(config.sliderSelector);
     this.sliderTitle = document.querySelector(config.sliderTitleSelector);
@@ -18,6 +15,7 @@ export class ProductSlider {
     this.prevSlideButton = document.querySelector(config.prevSlideButtonSelector);
     this.nextSlideButton = document.querySelector(config.nextSlideButtonSelector);
     this.slides = config.slides || [];
+    this.activeSlideIndex = 0;
   }
 
   init() {
