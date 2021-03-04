@@ -76,7 +76,6 @@
   --ebony-clay: #212A3A;
   --mirage-a: #1D2739;
   --mirage-b: #161D29;
-  --tundora: #444;
 
   --apple-a: #63A63E;
   --apple-b: #5FBB2D;
@@ -92,11 +91,10 @@
   --picton-blue: #3BBCE3;
   --light-orchid: #DC91D8;
 
-  --translucent-black-a: rgba(0, 0, 0, 0.0001);
+  --translucent-black-a: rgba(0, 0, 0, 0.25);
   --translucent-black-b: rgba(0, 0, 0, 0.3);
   --translucent-black-c: rgba(0, 0, 0, 0.15);
   --translucent-black-d: rgba(0, 0, 0, 0.24);
-  --translucent-black-e: rgba(0, 0, 0, 0.25);
 
   --translucent-white-a: rgba(255, 255, 255, 0.3);
   --translucent-white-b: rgba(255, 255, 255, 0.5);
@@ -109,17 +107,6 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* Всем изображениям укажем max-width: 100%, чтобы они не вылезали за пределы своих родительских
-элементов, и укажем автоматическую высоту, чтобы изменение размеров было пропорциональным. */
-img {
-  max-width: 100%;
-  height: auto;
 }
 
 .visually-hidden {
@@ -138,6 +125,17 @@ img {
 /* Это нужно, чтобы при нехватке контента подвал прижимался к нижней части страницы. */
 .page {
   height: 100%;
+}
+
+.page a {
+  text-decoration: none;
+}
+
+/* Всем изображениям укажем max-width: 100%, чтобы они не вылезали за пределы своих родительских
+элементов, и укажем автоматическую высоту, чтобы изменение размеров было пропорциональным. */
+.page img {
+  max-width: 100%;
+  height: auto;
 }
 
 .page-body {
@@ -164,12 +162,6 @@ img {
 .container {
   width: 940px;
   margin: 0 auto;
-}
-
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .section-title {
@@ -500,7 +492,7 @@ img {
   background-image: url('../img/product-categories/materials.svg');
 }
 
-.category.tools {
+.tools {
   background-color: var(--picton-blue);
 }
 
@@ -542,7 +534,7 @@ img {
   background-image: url('../img/product-categories/discounts.svg');
 }
 
-.category.delivery {
+.delivery {
   background-color: var(--yellow-orange-b);
 }
 
@@ -570,7 +562,7 @@ img {
   width: 100%;
   height: 104px;
   padding: 16px 24px;
-  background-color: var(--translucent-black-e);
+  background-color: var(--translucent-black-a);
 }
 
 .slider-title {
@@ -605,7 +597,6 @@ img {
   padding: 0;
   width: 22px;
   height: 40px;
-  outline: none;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -615,19 +606,18 @@ img {
 .next-slide-button::after {
   content: "";
   position: absolute;
+  top: 0;
   width: 22px;
   height: 40px;
   background-image: url("../img/icons/icon-left.svg");
 }
 
 .prev-slide-button::after {
-  top: 0;
   left: 0;
 }
 
 .next-slide-button::after {
   transform: rotate(180deg);
-  top: 0;
   right: 0;
 }
 
@@ -648,7 +638,6 @@ img {
   margin-right: 10px;
   width: 10px;
   height: 10px;
-  outline: none;
   border: 2px solid var(--basic-white);
   background-color: var(--basic-white);
   border-radius: 50%;
@@ -756,6 +745,9 @@ img {
 }
 
 .manufacturer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 220px;
   height: 145px;
   border: 1px solid var(--gallery);
@@ -821,7 +813,6 @@ img {
   line-height: 61px;
   text-align: left;
   font: inherit;
-  outline: none;
   border: none;
   color: var(--basic-white);
   background-color: var(--pickled-bluewood-a);
@@ -1027,7 +1018,7 @@ img {
   content: "";
   position: absolute;
   top: 10px;
-  left: 15px;
+  left: 14px;
   width: 12px;
   height: 22px;
   background-image: url("../img/icons/icon-fb.svg");
@@ -1036,8 +1027,8 @@ img {
 .instagram:after {
   content: "";
   position: absolute;
-  top: 11px;
-  left: 11px;
+  top: 10px;
+  left: 10px;
   width: 21px;
   height: 21px;
   background-image: url("../img/icons/icon-insta.svg");
@@ -1150,7 +1141,7 @@ img {
   display: block;
   width: 14px;
   height: 17px;
-  background: url("../img/icons/icon-home.svg") no-repeat center center;
+  background: url("../img/icons/icon-home.svg") no-repeat center;
 }
 
 .page-title-container {
@@ -1840,9 +1831,35 @@ img {
   margin-bottom: 21px;
 }
 
+.write-us-body .write-us-modal {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.write-us-body .modal-close-button {
+  display: none;
+}
+
+.filter-input-checkbox:focus + label::before,
+.filter-input-radio:focus + label::before {
+  outline: 1px solid var(--basic-black);
+}
+
+.sort-by input:focus + label {
+  outline: 1px solid var(--basic-black);
+}
+
+.sort-direction input:focus + label svg {
+  outline: 1px solid var(--basic-black);
+}
+
 /* модальные окна */
 
 .modal {
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -1852,7 +1869,6 @@ img {
 }
 
 .write-us-modal {
-  display: none;
   padding-top: 39px;
   width: 620px;
   background-color: var(--basic-white);
@@ -1875,7 +1891,7 @@ img {
   background-color: var(--wild-sand);
 }
 
-.feeback-form label {
+.write-us-form label {
   display: block;
   margin-bottom: 11px;
 }
@@ -1958,7 +1974,6 @@ img {
 }
 
 .modal-map {
-  display: none;
   width: 943px;
   height: 449px;
   background-color: var(--nobel);
@@ -1966,10 +1981,11 @@ img {
 
 .modal-map iframe {
   border: none;
+  width: 943px;
+  height: 442px;
 }
 
 .modal-order {
-  display: none;
   width: 620px;
   background-color: var(--basic-white);
 }

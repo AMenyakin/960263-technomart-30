@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Обратная связь</title>
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="img/favicon/32x32.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicon/152x152.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body class="write-us-body">
+  <section class="modal write-us-modal">
+    <h2 class="visually-hidden">Форма обратной связи</h2>
+    <form class="write-us-form" action="https://echo.htmlacademy.ru" method="POST">
+      <div class="write-us-container">
+        <div class="write-us-fields">
+          <div>
+            <label for="write-us-name">Ваше имя:</label>
+            <input class="write-us-name" id="write-us-name" name="name" type="text" placeholder="Имя Фамилия">
+          </div>
+          <div>
+            <label for="write-us-email">Ваш e-mail:</label>
+            <input class="write-us-email" id="write-us-email" name="email" type="text" placeholder="email@example.com">
+          </div>
+        </div>
+        <label class="write-us-message-label" for="write-us-message">Текст письма:</label>
+        <textarea class="write-us-message" id="write-us-message" name="message"></textarea>
+      </div>
+      <div class="write-us-actions">
+        <button class="send-button" type="submit">отправить</button>
+      </div>
+    </form>
+    <button class="modal-close-button" type="button" aria-label="Закрыть"></button>
+  </section>
+</body>
+</html>
