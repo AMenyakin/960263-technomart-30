@@ -423,8 +423,8 @@
 
 .logout-link {
   display: inline-block;
+  vertical-align: middle;
   position: relative;
-  top: 3px;
   left: 2px;
 }
 
@@ -1014,7 +1014,7 @@
 
 .social-link {
   position: relative;
-  display: inline-block;
+  display: block;
   text-align: center;
   width: 41px;
   height: 41px;
@@ -1088,7 +1088,14 @@
 .cart-link,
 .bookmarks-link {
   position: relative;
-  padding: 10px 21px 8px 35px;
+}
+
+.cart-link {
+  padding: 10px 28px 8px 35px;
+}
+
+.bookmarks-link {
+  padding: 10px 37px 8px 35px;
 }
 
 .cart-link::before {
@@ -1103,6 +1110,7 @@
 }
 
 .cart-not-empty {
+  padding-right: 23px;
   background-color: var(--amaranth);
 }
 
@@ -1324,10 +1332,12 @@
 
 .feedback-email {
   display: inline-block;
+  vertical-align: bottom;
 }
 
 .developer {
   display: inline-block;
+  vertical-align: bottom;
   margin-left: 51px;
   font-style: normal;
 }
@@ -1397,6 +1407,7 @@
 .button,
 .category-button {
   display: inline-block;
+  vertical-align: middle;
   padding-top: 11px;
   padding-bottom: 9px;
   font-size: 14px;
@@ -1609,6 +1620,7 @@
 
 .sort-by label {
   display: inline-block;
+  vertical-align: middle;
   position: relative;
   color: var(--translucent-black-b);
 }
@@ -1730,9 +1742,6 @@
 .price-controls {
   display: flex;
   justify-content: space-between;
-  font-size: 17px;
-  line-height: 18px;
-  font-weight: 400;
 }
 
 .price-controls input {
@@ -1742,6 +1751,14 @@
   text-align: center;
   border: none;
   background-color: var(--ecru-white);
+  font-size: 17px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.filter-form label {
+  font-size: 15px;
+  line-height: 19px;
 }
 
 .delimiter {
@@ -1750,11 +1767,11 @@
 }
 
 .manufacturer-filter .filter-option {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .power-supply-filter .filter-option {
-  margin-bottom: 17px;
+  margin-bottom: 22px;
 }
 
 .filter-option label {
@@ -1772,7 +1789,7 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
+  top: -2px;
   width: 23px;
   height: 23px;
   border: 2px solid var(--silver);
@@ -1805,7 +1822,7 @@
   content: "";
   position: absolute;
   left: 5px;
-  top: 2px;
+  top: 0;
   width: 20px;
   height: 10px;
   border-left: 4px solid var(--silver);

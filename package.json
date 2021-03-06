@@ -1,0 +1,22 @@
+{
+  "name": "960263-technomart-30",
+  "version": "1.0.0",
+  "description": "* Студент: [Алексей Менякин](https://up.htmlacademy.ru/htmlcss/30/user/960263). * Наставник: [Наталья Шурыгина](https://htmlacademy.ru/profile/id1178327).",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AMenyakin/960263-technomart-30.git"
+  },
+  "author": "Menyakin Alexey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AMenyakin/960263-technomart-30/issues"
+  },
+  "homepage": "https://github.com/AMenyakin/960263-technomart-30#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
