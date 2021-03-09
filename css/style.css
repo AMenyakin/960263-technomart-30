@@ -1221,6 +1221,10 @@
   order: -1;
 }
 
+.product-image-indented {
+  margin-right: 10px;
+}
+
 .product-item {
   position: relative;
   padding-bottom: 21px;
